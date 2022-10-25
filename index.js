@@ -2,8 +2,12 @@ const express = require('express');
 const app = express();
 const dotenv = require('dotenv').config();
 const jwt = require('jsonwebtoken');
+const cors = require('cors');
 
 app.use(express.json());
+app.use(cors({
+    origin: 'htts://meuservidor.com.br'
+}));
 
 const professores = [
     {nome: 'Mario', area: 'Area1'},
