@@ -7,9 +7,9 @@
     <li>DotEnv</li>
 </ol>
 
-<h4>Para testar o exemplo faça:</h4>
+<h4>Para testar o exemplo, use os comandos:</h4>
 <ol>
-    <li>Clone o repositório com o comando: git clone https://github.com/harleymacedo/node-express-api-mock-jwt-cors.git</li>
+    <li>Clone o repositório: git clone https://github.com/harleymacedo/node-express-api-mock-jwt-cors.git</li>
     <li>Entre na raiz do projeto com: cd node-express-api-mock-jwt-cors</li>
     <li>Instale os pacotes do projeto: npm install</li>
     <li>Crie o arquivo .env conforme o exemplo do arquivo .env.example e atribua valores</li>

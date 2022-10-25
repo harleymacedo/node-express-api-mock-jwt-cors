@@ -43,7 +43,7 @@ app.post('/logar', (req, res) => {
 });
 
 //Rota sem verificação de token
-app.get('/professor/todos', (req, res) => {
+app.get('/professor/todos', cors(), (req, res) => {
     try {
         res.json(professores);
     } catch (error) {
