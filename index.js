@@ -40,7 +40,7 @@ app.post('/logar', (req, res) => {
 });
 
 //Rota sem verificação de token, mas com cors
-app.get('/professor/todos', cors({origin: 'htts://meuservidor.com.br'}), (req, res) => {
+app.get('/professor/todos', cors({origin: 'http://meuservidor.com.br'}), (req, res) => {
     try {
         res.json(professores);
     } catch (error) {
@@ -49,7 +49,7 @@ app.get('/professor/todos', cors({origin: 'htts://meuservidor.com.br'}), (req, r
 });
 
 //Rota sem verificação de token nem verificação de cors
-app.get('/professor/aberto/todos', (req, res) => {
+app.get('/professor/aberto/todos', cors({origin: '*'}), (req, res) => {
     try {
         res.json(professores);
     } catch (error) {
