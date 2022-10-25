@@ -5,9 +5,6 @@ const jwt = require('jsonwebtoken');
 const cors = require('cors');
 
 app.use(express.json());
-app.use(cors({
-    origin: 'htts://meuservidor.com.br'
-}));
 
 const professores = [
     {nome: 'Mario', area: 'Area1'},
@@ -42,8 +39,17 @@ app.post('/logar', (req, res) => {
     }
 });
 
-//Rota sem verificação de token
-app.get('/professor/todos', cors(), (req, res) => {
+//Rota sem verificação de token, mas com cors
+app.get('/professor/todos', cors({origin: 'htts://meuservidor.com.br'}), (req, res) => {
+    try {
+        res.json(professores);
+    } catch (error) {
+        res.json({erro: true, mensagem: 'Erro na consulta'});
+    }
+});
+
+//Rota sem verificação de token nem verificação de cors
+app.get('/professor/aberto/todos', (req, res) => {
     try {
         res.json(professores);
     } catch (error) {
@@ -62,4 +68,4 @@ app.post('/professor', verificarJWT, (req, res) => {
     }
 });
 
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 3001);
